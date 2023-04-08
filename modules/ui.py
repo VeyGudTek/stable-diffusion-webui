@@ -542,8 +542,8 @@ def create_ui():
                 fn=wrap_gradio_gpu_call(modules.txt2img.txt2img, extra_outputs=[None, '', '']),
                 _js="submit",
                 inputs=[
-                    intervals,
                     dummy_component,
+                    intervals,
                     txt2img_prompt,
                     txt2img_negative_prompt,
                     txt2img_prompt_styles,
