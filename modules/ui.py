@@ -542,7 +542,7 @@ def create_ui():
                 fn=wrap_gradio_gpu_call(modules.txt2img.txt2img, extra_outputs=[None, '', '']),
                 _js="submit",
                 inputs=[
-                    intervals
+                    intervals,
                     dummy_component,
                     txt2img_prompt,
                     txt2img_negative_prompt,
@@ -579,7 +579,7 @@ def create_ui():
 
             txt2img_prompt.submit(**txt2img_args)
             s = submit.click(**txt2img_args)
-            stop.click(None, None, None, [s])
+            stop.click(None, None, None, cancels=[s])
 
             res_switch_btn.click(lambda w, h: (h, w), inputs=[width, height], outputs=[width, height], show_progress=False)
 
