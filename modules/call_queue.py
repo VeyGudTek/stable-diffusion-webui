@@ -56,8 +56,10 @@ def wrap_gradio_call(func, extra_outputs=None, add_stats=False):
         for i in generator:
             if first:
                 first = False
+            elif args[2]:
+                break
             else:
-                print('sleeping for,' args[1])
+                print('sleeping for', args[1])
                 time.sleep(args[1])
                 
             
