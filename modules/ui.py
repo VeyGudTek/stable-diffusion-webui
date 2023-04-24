@@ -309,7 +309,7 @@ def create_toprow(is_img2img):
             stop = gr.Button('Stop', variant='primary')
             generate_once = gr.Checkbox(label = 'Generate Only Once', value = True)
             with FormGroup(visible = False) as interval_options:
-                intervals = gr.Slider(label = 'How long between each image', maximum = 300)
+                intervals = gr.Slider(label = 'How long between each image?(Seconds)', maximum = 300)
 
             with gr.Row(visible = False, elem_id=f"{id_part}_tools"):
                 paste = ToolButton(value=paste_symbol, elem_id="paste")
